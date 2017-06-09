@@ -4,7 +4,7 @@ class ControllerExtensionInstaller extends Controller {
 		$this->load->language('extension/installer');
 
 		$this->document->setTitle($this->language->get('heading_title'));
-
+		
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -16,18 +16,18 @@ class ControllerExtensionInstaller extends Controller {
 			'text' => $this->language->get('heading_title'),
 			'href' => $this->url->link('extension/installer', 'token=' . $this->session->data['token'], true)
 		);
-
+		
 		$data['heading_title'] = $this->language->get('heading_title');
-
+        
 		$data['text_upload'] = $this->language->get('text_upload');
 		$data['text_loading'] = $this->language->get('text_loading');
-
+			
 		$data['entry_upload'] = $this->language->get('entry_upload');
 		$data['entry_overwrite'] = $this->language->get('entry_overwrite');
 		$data['entry_progress'] = $this->language->get('entry_progress');
-
+	
 		$data['help_upload'] = $this->language->get('help_upload');
-
+		
 		$data['button_upload'] = $this->language->get('button_upload');
 		$data['button_clear'] = $this->language->get('button_clear');
 		$data['button_continue'] = $this->language->get('button_continue');
@@ -41,14 +41,14 @@ class ControllerExtensionInstaller extends Controller {
 		} else {
 			$data['error_warning'] = '';
 		}
-
+		
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
-
+		
 		$this->response->setOutput($this->load->view('extension/installer', $data));
 	}
-
+	
 	public function upload() {
 		$this->load->language('extension/installer');
 
@@ -61,7 +61,7 @@ class ControllerExtensionInstaller extends Controller {
 
 		if (!$json) {
 			if (!empty($this->request->files['file']['name'])) {
-				if (substr($this->request->files['file']['name'], -10) != '.ocmod.zip' && substr($this->request->files['file']['name'], -10) != '.vqmod.zip' && substr($this->request->files['file']['name'], -10) != '.ocmod.xml' && substr($this->request->files['file']['name'], -10) != '.vqmod.xml') {
+				if (substr($this->request->files['file']['name'], -10) != '.ocmod.zip' && substr($this->request->files['file']['name'], -10) != '.ocmod.xml') {
 					$json['error'] = $this->language->get('error_filetype');
 				}
 
@@ -213,7 +213,7 @@ class ControllerExtensionInstaller extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
-
+ 
 	public function unzip() {
 		$this->load->language('extension/installer');
 
@@ -439,18 +439,10 @@ class ControllerExtensionInstaller extends Controller {
 					if ($name) {
 						$name = $name->nodeValue;
 					} else {
-						$name = $dom->getElementsByTagName('id')->item(0);
-						if ($name) {
-							$name = $name->nodeValue;
-						} else {
-							$name = '';
-						}
+						$name = '';
 					}
 
 					$code = $dom->getElementsByTagName('code')->item(0);
-					if (!$code) {
-						$code = $dom->getElementsByTagName('id')->item(0);
-					}
 
 					if ($code) {
 						$code = $code->nodeValue;
@@ -549,7 +541,7 @@ class ControllerExtensionInstaller extends Controller {
 		}
 
 		$directory = DIR_UPLOAD . $this->request->post['path'];
-
+		
 		if (!is_dir($directory) || substr(str_replace('\\', '/', realpath($directory)), 0, strlen(DIR_UPLOAD)) != DIR_UPLOAD) {
 			$json['error'] = $this->language->get('error_directory');
 		}

@@ -1,31 +1,31 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://sad.lh/admin/');
-define('HTTP_CATALOG', 'http://sad.lh/');
+define('HTTP_SERVER', 'http://slobodasad.com.ua/admin/');
+define('HTTP_CATALOG', 'http://slobodasad.com.ua/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://sad.lh/admin/');
-define('HTTPS_CATALOG', 'http://sad.lh/');
+define('HTTPS_SERVER', 'http://slobodasad.com.ua/admin/');
+define('HTTPS_CATALOG', 'http://slobodasad.com.ua/');
 
 // DIR
-define('DIR_APPLICATION', 'D:/Projects/sources/sad/admin/');
-define('DIR_SYSTEM', 'D:/Projects/sources/sad/system/');
-define('DIR_IMAGE', 'D:/Projects/sources/sad/image/');
-define('DIR_LANGUAGE', 'D:/Projects/sources/sad/admin/language/');
-define('DIR_TEMPLATE', 'D:/Projects/sources/sad/admin/view/template/');
-define('DIR_CONFIG', 'D:/Projects/sources/sad/system/config/');
-define('DIR_CACHE', 'D:/Projects/sources/sad/system/storage/cache/');
-define('DIR_DOWNLOAD', 'D:/Projects/sources/sad/system/storage/download/');
-define('DIR_LOGS', 'D:/Projects/sources/sad/system/storage/logs/');
-define('DIR_MODIFICATION', 'D:/Projects/sources/sad/system/storage/modification/');
-define('DIR_UPLOAD', 'D:/Projects/sources/sad/system/storage/upload/');
-define('DIR_CATALOG', 'D:/Projects/sources/sad/catalog/');
+define('DIR_APPLICATION', '/home/slobodas/slobodasad.com.ua/www/admin/');
+define('DIR_SYSTEM', '/home/slobodas/slobodasad.com.ua/www/system/');
+define('DIR_IMAGE', '/home/slobodas/slobodasad.com.ua/www/image/');
+define('DIR_LANGUAGE', '/home/slobodas/slobodasad.com.ua/www/admin/language/');
+define('DIR_TEMPLATE', '/home/slobodas/slobodasad.com.ua/www/admin/view/template/');
+define('DIR_CONFIG', '/home/slobodas/slobodasad.com.ua/www/system/config/');
+define('DIR_CACHE', '/home/slobodas/slobodasad.com.ua/www/system/storage/cache/');
+define('DIR_DOWNLOAD', '/home/slobodas/slobodasad.com.ua/www/system/storage/download/');
+define('DIR_LOGS', '/home/slobodas/slobodasad.com.ua/www/system/storage/logs/');
+define('DIR_MODIFICATION', '/home/slobodas/slobodasad.com.ua/www/system/storage/modification/');
+define('DIR_UPLOAD', '/home/slobodas/slobodasad.com.ua/www/system/storage/upload/');
+define('DIR_CATALOG', '/home/slobodas/slobodasad.com.ua/www/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_DATABASE', 'sad');
+define('DB_HOSTNAME', 'slobodas.mysql.ukraine.com.ua');
+define('DB_USERNAME', 'slobodas_db');
+define('DB_PASSWORD', 'q3bkpB42');
+define('DB_DATABASE', 'slobodas_db');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
