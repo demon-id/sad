@@ -267,10 +267,13 @@
            
 <span class="or"><?php echo $text_or; ?></span>
 <br/>
-		<span class="links">
+		<?php /*<span class="links">
             <button type="button" class="btn btn-default product_whishlist" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_wishlist; ?></span></button>
             <button type="button" class="btn btn-default product_compare" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_compare; ?></span></button>
-         </span> </div>
+         </span>
+         */ ?>
+
+            </div>
 		  
             <?php if ($minimum > 1) { ?>
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
