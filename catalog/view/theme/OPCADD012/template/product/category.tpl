@@ -159,12 +159,12 @@
         </div>
 	 </div>
 				
-           
-               
-				<div class="button_wishlist_compare">
+              <?php /*
+              <div class="button_wishlist_compare">
                 <button type="button" class="whishlist"  title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_wishlist; ?></span></button>
                 <button type="button" class="compare"  title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_compare; ?></span></button>
               </div>
+              */ ?>
 			  
                 
 			
