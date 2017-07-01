@@ -376,7 +376,6 @@ class ControllerProductProduct extends Controller {
 				$data['minimum'] = 1;
 			}
 
-			die('==='.$this->config->get('config_review_status'));
 			$data['review_status'] = $this->config->get('config_review_status');
 
 			if ($this->config->get('config_review_guest') || $this->customer->isLogged()) {
