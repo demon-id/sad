@@ -62,7 +62,7 @@
             
           </div>
         </div>
-		<a  href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a>
+		<?php /*<a  href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a> */?>
 		<div class="pagination-right">
 		<div class="show_limit pull-right">
         <div class="col-md-1 text-right limit_label">
