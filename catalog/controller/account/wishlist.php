@@ -1,6 +1,10 @@
 <?php
 class ControllerAccountWishList extends Controller {
 	public function index() {
+
+		// close this page
+		$this->response->redirect($this->url->link('common/home', '', true));
+
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/wishlist', '', true);
 
@@ -129,6 +133,10 @@ class ControllerAccountWishList extends Controller {
 	}
 
 	public function add() {
+
+		// close this page
+		$this->response->redirect($this->url->link('common/home', '', true));
+
 		$this->load->language('account/wishlist');
 
 		$json = array();
