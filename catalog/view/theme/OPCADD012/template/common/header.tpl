@@ -208,7 +208,7 @@ jQuery(window).resize(function() {quickbox();});
 			<li class="first level0"><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
             <li class="level0"><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
 			<li class="level0"><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li> 
-            <li class="level0"><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>   
+            <li class="level0"><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
 			<li class="level0"><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
 			
 			
