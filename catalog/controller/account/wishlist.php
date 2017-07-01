@@ -135,7 +135,10 @@ class ControllerAccountWishList extends Controller {
 	public function add() {
 
 		// close this page
-		$this->response->redirect($this->url->link('common/home', '', true));
+		$json = array();
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+
 
 		$this->load->language('account/wishlist');
 
