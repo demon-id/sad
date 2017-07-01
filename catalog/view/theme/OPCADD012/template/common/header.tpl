@@ -170,7 +170,7 @@ jQuery(window).resize(function() {quickbox();});
             <?php } ?>
          
         
-        <li><a href="<?php echo $wishlist; ?>" id="wishlist-total_tm" title="<?php echo $text_wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
+        <?php /*<li><a href="<?php echo $wishlist; ?>" id="wishlist-total_tm" title="<?php echo $text_wishlist; ?>"><?php echo $text_wishlist; ?></a></li> */ ?>
         <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><?php echo $text_checkout; ?></a></li>
       </ul>
     </div>
@@ -205,13 +205,8 @@ jQuery(window).resize(function() {quickbox();});
 <div class="nav-responsive"><span>Menu</span><div class="expandable"></div></div>
 <ul class="cms-menu">
 			<li class="head-links"> <a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
-			<li class="first level0"><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
-            <li class="level0"><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-			<li class="level0"><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li> 
             <li class="level0"><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
 			<li class="level0"><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-			
-			
          </ul>
 
   <ul class="main-navigation top-menu">
