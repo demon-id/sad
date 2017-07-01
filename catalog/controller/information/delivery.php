@@ -1,31 +1,11 @@
 <?php
-class ControllerInformationContact extends Controller {
+class ControllerInformationDelivery extends Controller {
 	private $error = array();
 
 	public function index() {
-		$this->load->language('information/contact');
+		$this->load->language('information/delivery');
 
 		$this->document->setTitle($this->language->get('heading_title'));
-
-		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-			$mail = new Mail();
-			$mail->protocol = $this->config->get('config_mail_protocol');
-			$mail->parameter = $this->config->get('config_mail_parameter');
-			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-
-			$mail->setTo($this->config->get('config_email'));
-			$mail->setFrom($this->request->post['email']);
-			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-			$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
-			$mail->setText($this->request->post['enquiry']);
-			$mail->send();
-
-			$this->response->redirect($this->url->link('information/contact/success'));
-		}
 
 		$data['breadcrumbs'] = array();
 
@@ -36,14 +16,14 @@ class ControllerInformationContact extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/contact')
+			'href' => $this->url->link('information/delivery')
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_location'] = $this->language->get('text_location');
 		$data['text_store'] = $this->language->get('text_store');
-		$data['text_contact'] = $this->language->get('text_contact');
+		$data['text_delivery'] = $this->language->get('text_delivery');
 		$data['text_address'] = $this->language->get('text_address');
 		$data['text_telephone'] = $this->language->get('text_telephone');
 		$data['text_fax'] = $this->language->get('text_fax');
@@ -76,7 +56,7 @@ class ControllerInformationContact extends Controller {
 
 		$data['button_submit'] = $this->language->get('button_submit');
 
-		$data['action'] = $this->url->link('information/contact', '', true);
+		$data['action'] = $this->url->link('information/delivery', '', true);
 
 		$this->load->model('tool/image');
 
@@ -155,7 +135,7 @@ class ControllerInformationContact extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		$this->response->setOutput($this->load->view('information/contact', $data));
+		$this->response->setOutput($this->load->view('information/delivery', $data));
 	}
 
 	protected function validate() {
@@ -182,39 +162,4 @@ class ControllerInformationContact extends Controller {
 
 		return !$this->error;
 	}
-
-	public function success() {
-		$this->load->language('information/contact');
-
-		$this->document->setTitle($this->language->get('heading_title'));
-
-		$data['breadcrumbs'] = array();
-
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
-
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/contact')
-		);
-
-		$data['heading_title'] = $this->language->get('heading_title');
-
-		$data['text_message'] = $this->language->get('text_success');
-
-		$data['button_continue'] = $this->language->get('button_continue');
-
-		$data['continue'] = $this->url->link('common/home');
-
-		$data['column_left'] = $this->load->controller('common/column_left');
-		$data['column_right'] = $this->load->controller('common/column_right');
-		$data['content_top'] = $this->load->controller('common/content_top');
-		$data['content_bottom'] = $this->load->controller('common/content_bottom');
-		$data['footer'] = $this->load->controller('common/footer');
-		$data['header'] = $this->load->controller('common/header');
-
-		$this->response->setOutput($this->load->view('common/success', $data));
 	}
-}
