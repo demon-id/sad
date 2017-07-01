@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']  = 'Обратная связь';
+$_['heading_title']  = 'Контакты';
 
 // Text
 $_['text_location']  = 'Наше местонахождение';
