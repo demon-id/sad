@@ -81,7 +81,7 @@
           <div class="<?php echo $class; ?>">
           <h1><?php echo $heading_title; ?></h1>
 		  
-		  <?php if(review_status) { ?>
+		  <?php if($review_status) { ?>
           <div class="rating">            
               <?php for ($i = 1; $i <= 5; $i++) { ?>
               <?php if ($rating < $i) { ?>
