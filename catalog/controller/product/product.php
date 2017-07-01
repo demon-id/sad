@@ -376,6 +376,7 @@ class ControllerProductProduct extends Controller {
 				$data['minimum'] = 1;
 			}
 
+			die('==='.$this->config->get('config_review_status'));
 			$data['review_status'] = $this->config->get('config_review_status');
 
 			if ($this->config->get('config_review_guest') || $this->customer->isLogged()) {
@@ -434,7 +435,6 @@ class ControllerProductProduct extends Controller {
 					$tax = false;
 				}
 
-				var_dump($this->config->get('config_review_status')); die();
 				if ($this->config->get('config_review_status')) {
 					$rating = (int)$result['rating'];
 				} else {
