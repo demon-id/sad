@@ -3,6 +3,10 @@ class ControllerAccountRegister extends Controller {
 	private $error = array();
 
 	public function index() {
+
+		// close this page
+		$this->response->redirect($this->url->link('common/home', '', true));
+
 		if ($this->customer->isLogged()) {
 			$this->response->redirect($this->url->link('account/account', '', true));
 		}
