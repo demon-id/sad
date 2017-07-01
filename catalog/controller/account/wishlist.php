@@ -138,6 +138,7 @@ class ControllerAccountWishList extends Controller {
 		$json = array();
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+		exit;
 
 
 		$this->load->language('account/wishlist');
