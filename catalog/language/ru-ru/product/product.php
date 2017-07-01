@@ -45,6 +45,7 @@ $_['tab_description']                       = 'Описание';
 $_['tab_attribute']                           = 'Характеристики';
 $_['tab_review']                              = 'Отзывов (%s)';
 $_['button_continue']                      = 'Отправить отзыв';
+$_['button_quick']                             = 'Просмотр';
 
 // Error
 $_['error_name']                              = 'Имя должно быть от 3 до 25 символов!';
