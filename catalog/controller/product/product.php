@@ -434,6 +434,7 @@ class ControllerProductProduct extends Controller {
 					$tax = false;
 				}
 
+				var_dump($this->config->get('config_review_status')); die();
 				if ($this->config->get('config_review_status')) {
 					$rating = (int)$result['rating'];
 				} else {
