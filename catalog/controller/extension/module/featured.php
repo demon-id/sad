@@ -8,6 +8,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 		$data['text_tax'] = $this->language->get('text_tax');
 
 		$data['button_cart'] = $this->language->get('button_cart');
+		$data['button_quick'] = $this->language->get('button_quick');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
 
@@ -65,9 +66,11 @@ class ControllerExtensionModuleFeatured extends Controller {
 						'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 						'price'       => $price,
 						'special'     => $special,
+						
 						'tax'         => $tax,
 						'rating'      => $rating,
-						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'quick'        => $this->url->link('product/quick_view','&product_id=' . $product_info['product_id'])
 					);
 				}
 			}

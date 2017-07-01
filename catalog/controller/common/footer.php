@@ -4,7 +4,6 @@ class ControllerCommonFooter extends Controller {
 		$this->load->language('common/footer');
 
 		$data['scripts'] = $this->document->getScripts('footer');
-
 		$data['text_information'] = $this->language->get('text_information');
 		$data['text_service'] = $this->language->get('text_service');
 		$data['text_extra'] = $this->language->get('text_extra');
@@ -46,7 +45,10 @@ class ControllerCommonFooter extends Controller {
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true);
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
-
+		
+		$data['footerleft'] = $this->load->controller('common/footerleft');
+		$data['footerright'] = $this->load->controller('common/footerright');
+		$data['footerleftcol'] = $this->load->controller('common/footerleftcol');
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
 			$this->load->model('tool/online');
@@ -71,7 +73,10 @@ class ControllerCommonFooter extends Controller {
 
 			$this->model_tool_online->addOnline($ip, $this->customer->getId(), $url, $referer);
 		}
-
+		$data['footertop'] = $this->load->controller('common/footertop');
+		$data['footerleft'] = $this->load->controller('common/footerleft');
+		$data['footerright'] = $this->load->controller('common/footerright');
+		
 		return $this->load->view('common/footer', $data);
 	}
 }

@@ -12,3 +12,5 @@ $_['text_password']        = 'Change your password';
 $_['text_payment']         = 'Change your payment preferences';
 $_['text_tracking']        = 'Custom Affiliate Tracking Code';
 $_['text_transaction']     = 'View your transaction history';
+$_['text_logout']   = 'Logout';
+$_['text_affiliate_logout']   = 'My Affiliate Logout';

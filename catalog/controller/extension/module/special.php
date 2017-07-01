@@ -6,7 +6,7 @@ class ControllerExtensionModuleSpecial extends Controller {
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_tax'] = $this->language->get('text_tax');
-
+		$data['button_quick'] = $this->language->get('button_quick');
 		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
@@ -67,7 +67,8 @@ class ControllerExtensionModuleSpecial extends Controller {
 					'special'     => $special,
 					'tax'         => $tax,
 					'rating'      => $rating,
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+					'quick'        => $this->url->link('product/quick_view','&product_id=' . $result['product_id'])
 				);
 			}
 

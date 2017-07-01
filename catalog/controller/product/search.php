@@ -153,6 +153,7 @@ class ControllerProductSearch extends Controller {
 		$data['button_compare'] = $this->language->get('button_compare');
 		$data['button_list'] = $this->language->get('button_list');
 		$data['button_grid'] = $this->language->get('button_grid');
+		$data['button_quick'] = $this->language->get('button_quick');
 
 		$data['compare'] = $this->url->link('product/compare');
 
@@ -254,7 +255,8 @@ class ControllerProductSearch extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
+					'quick'        => $this->url->link('product/quick_view','&product_id=' . $result['product_id'])
 				);
 			}
 

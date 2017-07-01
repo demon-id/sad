@@ -1,7 +1,7 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
-		// Analytics
+			// Analytics
 		$this->load->model('extension/extension');
 
 		$data['analytics'] = array();
@@ -12,7 +12,7 @@ class ControllerCommonHeader extends Controller {
 			if ($this->config->get($analytic['code'] . '_status')) {
 				$data['analytics'][] = $this->load->controller('extension/analytics/' . $analytic['code'], $this->config->get($analytic['code'] . '_status'));
 			}
-		}
+}
 
 		if ($this->request->server['HTTPS']) {
 			$server = $this->config->get('config_ssl');
@@ -20,13 +20,14 @@ class ControllerCommonHeader extends Controller {
 			$server = $this->config->get('config_url');
 		}
 
-		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
+			if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
 			$this->document->addLink($server . 'image/' . $this->config->get('config_icon'), 'icon');
 		}
 
 		$data['title'] = $this->document->getTitle();
 
 		$data['base'] = $server;
+
 		$data['description'] = $this->document->getDescription();
 		$data['keywords'] = $this->document->getKeywords();
 		$data['links'] = $this->document->getLinks();
@@ -34,7 +35,6 @@ class ControllerCommonHeader extends Controller {
 		$data['scripts'] = $this->document->getScripts();
 		$data['lang'] = $this->language->get('code');
 		$data['direction'] = $this->language->get('direction');
-
 		$data['name'] = $this->config->get('config_name');
 
 		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
@@ -46,18 +46,25 @@ class ControllerCommonHeader extends Controller {
 		$this->load->language('common/header');
 
 		$data['text_home'] = $this->language->get('text_home');
-
-		// Wishlist
+		    // Wishlist
 		if ($this->customer->isLogged()) {
 			$this->load->model('account/wishlist');
 
 			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
 		} else {
 			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
-		}
+		}	
 
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
+		
+		$data['text_contact'] = $this->language->get('text_contact');
+		$data['text_return'] = $this->language->get('text_return');
+		$data['text_sitemap'] = $this->language->get('text_sitemap');
+		$data['text_affiliate'] = $this->language->get('text_affiliate');
+		$data['text_voucher'] = $this->language->get('text_voucher');
+		$data['text_special'] = $this->language->get('text_special');
+		$data['text_manufacturer'] = $this->language->get('text_manufacturer');
 
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_register'] = $this->language->get('text_register');
@@ -84,6 +91,15 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
+		$data['mytemplate'] = $this->config->get('theme_default_directory');
+		
+		$data['contact'] = $this->url->link('information/contact');
+		$data['return'] = $this->url->link('account/return/add', '', true);
+		$data['sitemap'] = $this->url->link('information/sitemap');
+		$data['affiliate'] = $this->url->link('affiliate/account', '', true);
+		$data['voucher'] = $this->url->link('account/voucher', '', true);
+		$data['manufacturer'] = $this->url->link('product/manufacturer');
+		$data['special'] = $this->url->link('product/special');
 
 		// Menu
 		$this->load->model('catalog/category');
@@ -101,18 +117,41 @@ class ControllerCommonHeader extends Controller {
 
 				$children = $this->model_catalog_category->getCategories($category['category_id']);
 
+			
+				
 				foreach ($children as $child) {
 					$filter_data = array(
 						'filter_category_id'  => $child['category_id'],
 						'filter_sub_category' => true
-					);
+					);					
+					// Level 2
+					$children_level2 = $this->model_catalog_category->getCategories($child['category_id']);
+					$children_data_level2 = array();
+					foreach ($children_level2 as $child_level2) {
+							$data_level2 = array(
+									'filter_category_id'  => $child_level2['category_id'],
+									'filter_sub_category' => true
+							);
+							$product_total_level2 = '';
+							if ($this->config->get('config_product_count')) {
+									$product_total_level2 = ' (' . $this->model_catalog_product->getTotalProducts($data_level2) . ')';
+							}
 
+							$children_data_level2[] = array(
+									'name'  =>  $child_level2['name'],
+									'href'  => $this->url->link('product/category', 'path=' . $child['category_id'] . '_' . $child_level2['category_id']),
+									'id' => $category['category_id']. '_' . $child['category_id']. '_' . $child_level2['category_id']
+							);
+					}
 					$children_data[] = array(
-						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
+							'name'  => $child['name'],
+							'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
+							'id' => $category['category_id']. '_' . $child['category_id'],
+							'children_level2' => $children_data_level2,
 					);
+					
 				}
-
+		
 				// Level 1
 				$data['categories'][] = array(
 					'name'     => $category['name'],
@@ -146,7 +185,12 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['class'] = 'common-home';
 		}
+		
+		
+		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['column_right'] = $this->load->controller('common/column_right');		
 
 		return $this->load->view('common/header', $data);
+		
 	}
 }
