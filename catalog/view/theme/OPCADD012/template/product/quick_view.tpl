@@ -233,10 +233,10 @@
             <?php if ($minimum > 1) { ?>
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
             <?php } ?>
-			<div class="btn-group wish-comp">
+			<?php /*<div class="btn-group wish-comp">
             <button type="button"  class="btn btn-default wishlist" title="<?php echo $button_wishlist; ?>" onclick="parent.wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i><?php echo $button_wishlist; ?></button>
             <button type="button"  class="btn btn-default compare" title="<?php echo $button_compare; ?>" onclick="parent.compare.add('<?php echo $product_id; ?>');"><i class="fa fa-area-chart"></i><?php echo $button_compare; ?></button>
-          </div>
+            </div>*/ ?>
 		  		
 		</div>
 		</div>
