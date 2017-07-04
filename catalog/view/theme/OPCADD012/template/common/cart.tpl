@@ -47,7 +47,7 @@
           </tr>
           <?php } ?>
         </table>
-        <div class="text-right cart_button"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></div>
+        <div class="text-right cart_button"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_checkout; ?></strong></a></div>
       </div>
     </li>
     <?php } else { ?>
