@@ -101,11 +101,7 @@ class ControllerCommonHeader extends Controller {
 		$data['voucher'] = $this->url->link('account/voucher', '', true);
 		$data['manufacturer'] = $this->url->link('product/manufacturer');
 		$data['special'] = $this->url->link('product/special');
-
-		$delivery_info = $this->model_catalog_information->getInformation(6);
-		var_dump($delivery_info); die();
-
-		$data['delivery'] = $this->url->link('information/delivery');
+		$data['delivery'] = $this->url->link('information/information', 'information_id=6');
 
 		// Menu
 		$this->load->model('catalog/category');
