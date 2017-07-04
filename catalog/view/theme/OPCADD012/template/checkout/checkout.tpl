@@ -23,7 +23,7 @@
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title">+++++++++<?php echo $text_checkout_option; ?></h4>
+            <h4 class="panel-title"><?php echo $text_checkout_option; ?></h4>
           </div>
           <div class="panel-collapse collapse" id="collapse-checkout-option">
             <div class="panel-body"></div>
@@ -111,7 +111,7 @@ $(document).ready(function() {
         success: function(html) {
            $('#collapse-checkout-option .panel-body').html(html);
 
-			$('#collapse-checkout-option').parent().find('.panel-heading .panel-title').html('<a href="#collapse-checkout-option" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle"><?php echo $text_checkout_option; ?> <i class="fa fa-caret-down"></i></a>');
+			$('#collapse-checkout-option').parent().find('.panel-heading .panel-title').html('<a href="#collapse-checkout-option" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle">+++++++++++<?php echo $text_checkout_option; ?> <i class="fa fa-caret-down"></i></a>');
 
 			$('a[href=\'#collapse-checkout-option\']').trigger('click');
         },
