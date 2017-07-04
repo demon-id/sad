@@ -29,11 +29,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1 class="shopping_cart"><?php echo $heading_title; ?>
-        <?php if ($weight) { ?>
-        &nbsp;(<?php echo $weight; ?>)
-        <?php } ?>
-      </h1>
+      <h1 class="shopping_cart"><?php echo $heading_title; ?></h1>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
 		<div class="cart-info">
