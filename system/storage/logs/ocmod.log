@@ -1,0 +1,153 @@
+2017-07-07 16:27:31 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Articles Catalog
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 153
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_information']
+LINE: 27
+CODE: 'Статьи'
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_information']
+LINE: 27
+CODE: 'Статьи'
+LINE: 27
+
+FILE: admin/language/ru-ru/catalog/information.php
+CODE: 'Статьи'
+LINE: 2
+LINE: 6
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'product/category' && isset($this->request->get['path'])) {
+LINE: 22
+CODE: $output = $this->load->controller('extension/module/' . $part[0], $setting_info);
+LINE: 74
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'product/category' && isset($this->request->get['path'])) {
+LINE: 22
+CODE: $output = $this->load->controller('extension/module/' . $part[0], $setting_info);
+LINE: 74
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'product/category' && isset($this->request->get['path'])) {
+LINE: 22
+CODE: $output = $this->load->controller('extension/module/' . $part[0], $setting_info);
+LINE: 74
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'product/category' && isset($this->request->get['path'])) {
+LINE: 22
+CODE: $output = $this->load->controller('extension/module/' . $part[0], $setting_info);
+LINE: 74
+
+FILE: catalog/controller/extension/feed/google_sitemap.php
+CODE: $output .= '</urlset>';
+LINE: 77
+CODE: return $output;
+LINE: 140
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title']
+LINE: 33
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['entry_sort_order'] = $this->language->get('entry_sort_order');
+LINE: 320
+CODE: $data['help_column'] = $this->language->get('help_column');
+LINE: 330
+CODE: if (isset($this->request->post['status'])) {
+LINE: 550
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['help_keyword'] = $this->language->get('help_keyword');
+LINE: 620
+CODE: // Attributes
+LINE: 1101
+
+FILE: admin/language/ru-ru/catalog/category.php
+CODE: $_['entry_status']
+LINE: 33
+CODE: $_['help_column']
+LINE: 43
+
+FILE: admin/language/ru-ru/catalog/product.php
+CODE: $_['entry_recurring']
+LINE: 84
+CODE: $_['help_tag']
+LINE: 105
+
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 52
+CODE: if ($data['keyword']) {
+LINE: 158
+
+FILE: admin/model/catalog/product.php
+CODE: if (isset($data['product_attribute'])) {
+LINE: 26
+CODE: if (!empty($data['product_attribute'])) {
+LINE: 163
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
+LINE: 188
+CODE: <?php echo $footer; ?>
+LINE: 340
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <div class="tab-pane" id="tab-attribute">
+LINE: 423
+CODE: <?php echo $footer; ?>
+LINE: 1451
+----------------------------------------------------------------
+MOD: Articles Catalog SEO URL
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 48
+CODE: $url[0] != 'product_id') {
+LINE: 52
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 74
+CODE: } elseif ($key == 'path') {
+LINE: 99
+----------------------------------------------------------------
