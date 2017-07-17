@@ -1,9 +1,9 @@
 <div class="box">
  <div class="title_inner_block"> <div class="box-heading"><?php echo $heading_title; ?></div></div>
   <div class="box-content left-category">
-    <ul class="box-category treeview-list treeview">
+    <ul class="box-category treeview-list">
       <?php foreach ($categories as $category) { ?>
-      <li class="active">
+      <li>
         <?php if ($category['category_id'] == $category_id) { ?>
         <a href="<?php echo $category['href']; ?>" class="active"><?php echo $category['name']; ?></a>
         <?php } else { ?>
