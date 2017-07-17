@@ -4,8 +4,11 @@
     <ul class="box-category treeview-list treeview">
       <?php foreach ($categories as $category) { ?>
       <li>
-
+        <?php if ($category['category_id'] == $category_id) { ?>
+        <a href="<?php echo $category['href']; ?>" class="active"><?php echo $category['name']; ?></a>
+        <?php } else { ?>
         <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+        <?php } ?>
         <?php if ($category['children']) { ?>
         <ul class="left-category-inner">
           <?php foreach ($category['children'] as $child) { ?>
