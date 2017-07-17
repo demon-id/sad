@@ -2353,7 +2353,7 @@ transition-duration: 500ms;
 .header{
     min-height: 110px;
     z-index: 99;
-	padding: 0 0 5 0;
+	padding: 0;
 
 }
 .header .header-left {float:left;}
@@ -3775,10 +3775,8 @@ section#social_block > ul{padding:0 0 0 30px;}
     margin-left: 5px;
 }
 header{
-	
-
 	height: 163px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	
 }
 
