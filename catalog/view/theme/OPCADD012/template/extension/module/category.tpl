@@ -3,7 +3,7 @@
   <div class="box-content left-category">
     <ul class="box-category treeview-list treeview">
       <?php foreach ($categories as $category) { ?>
-      <li>
+      <li class="active">
         <?php if ($category['category_id'] == $category_id) { ?>
         <a href="<?php echo $category['href']; ?>" class="active"><?php echo $category['name']; ?></a>
         <?php } else { ?>
