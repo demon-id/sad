@@ -366,10 +366,6 @@ opacity:0;
     display: none;
 }
 
-.header-box {
-    background: #d6f3d0;
-}
-
 .box .box-product .product-thumb .button-group.grid {
   
     left: 0;
@@ -2357,9 +2353,14 @@ transition-duration: 500ms;
 .header{
     min-height: 110px;
     z-index: 99;
-	padding: 0;
+	padding: 0px 0px 5px 0px;
 
 }
+
+.header-box {
+    background: #d6f3d0;
+}
+
 .header .header-left {float:left;}
 
 #logo img{display:inline-block;}
