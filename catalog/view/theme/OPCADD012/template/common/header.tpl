@@ -105,7 +105,7 @@ jQuery(window).resize(function() {quickbox();});
 <header>
 <div id="header-container_main">
   <div class="container">
-    <div class="row header">
+    <div class="row header box-content">
      
 	 <div class="header-left">
 	
