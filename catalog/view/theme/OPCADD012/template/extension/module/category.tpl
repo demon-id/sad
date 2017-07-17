@@ -1,7 +1,7 @@
 <div class="box">
  <div class="title_inner_block"> <div class="box-heading"><?php echo $heading_title; ?></div></div>
   <div class="box-content left-category">
-    <ul class="box-category treeview-list">
+    <ul class="box-category treeview-list treeview">
       <?php foreach ($categories as $category) { ?>
       <li>
         <?php if ($category['category_id'] == $category_id) { ?>
