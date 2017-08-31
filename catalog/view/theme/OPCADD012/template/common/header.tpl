@@ -194,7 +194,6 @@ jQuery(window).resize(function() {quickbox();});
 
 <div class="nav-inner">
 <!-- ======= Menu Code START ========= -->
-<?php if ($categories) { ?>
 <!-- Opencart 3 level Category Menu-->
 <div class="container">
 <div class="main-menu-top">
@@ -260,7 +259,6 @@ jQuery(window).resize(function() {quickbox();});
 </div>
 */ ?>
 </div>
-<?php } ?>
 <!-- ======= Menu Code END ========= -->
 
 </div>
