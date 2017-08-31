@@ -66,6 +66,7 @@ class ControllerCommonHeader extends Controller {
 		$data['text_special'] = $this->language->get('text_special');
 		$data['text_manufacturer'] = $this->language->get('text_manufacturer');
 		$data['text_delivery'] = $this->language->get('text_delivery');
+		$data['text_articles'] = $this->language->get('text_articles');
 
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_register'] = $this->language->get('text_register');
@@ -102,6 +103,7 @@ class ControllerCommonHeader extends Controller {
 		$data['manufacturer'] = $this->url->link('product/manufacturer');
 		$data['special'] = $this->url->link('product/special');
 		$data['delivery'] = $this->url->link('information/information', 'information_id=6');
+		$data['articles'] = $this->url->link('information/articles');
 
 		// Menu
 		$this->load->model('catalog/category');
