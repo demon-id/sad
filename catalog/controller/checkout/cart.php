@@ -289,6 +289,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['entry_phone'] = $this->language->get('entry_phone');
 			$data['entry_email'] = $this->language->get('entry_email');
 			$data['entry_comment'] = $this->language->get('entry_comment');
+			$data['button_submit'] = $this->language->get('button_submit');
 
 			if (isset($this->error['name'])) {
 				$data['error_name'] = $this->error['name'];
