@@ -1870,6 +1870,9 @@ background:#fff;
 .box.box-left-side ul li a {
     color: #47525c !important;
 }
+.box.box-left-side ul li a:hover {
+    text-decoration: underline;
+}
 
 .box .box-content ul ul{
 	margin-left:15px;
