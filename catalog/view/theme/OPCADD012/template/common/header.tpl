@@ -250,7 +250,6 @@ jQuery(window).resize(function() {quickbox();});
   </ul>
 </div>
 
-<?php /*
 <div class="header-right">
 	  <?php echo $search; ?>
 	   
@@ -258,7 +257,6 @@ jQuery(window).resize(function() {quickbox();});
 
 
 </div>
-*/ ?>
 </div>
 <!-- ======= Menu Code END ========= -->
 
