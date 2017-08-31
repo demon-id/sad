@@ -8,6 +8,7 @@
                         <li class="level0"><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
                         <li class="level0"><a href="<?php echo $articles; ?>"><?php echo $text_articles; ?></a></li>
                         <li class="level0"><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+                        <li class="level0">&nbsp;</li>
                     </ul>
                 </div>
         </div>
