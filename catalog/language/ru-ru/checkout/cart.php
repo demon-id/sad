@@ -37,7 +37,7 @@ $_['column_total']          = 'Всего';
 
 // Entry
 $_['entry_name']			= 'Фамилия, имя, отчество';
-$_['entry_email']			= 'Телефон';
+$_['entry_phone']			= 'Телефон';
 $_['entry_email']			= 'E-Mail';
 $_['entry_comment']			= 'Коммнетарий';
 
