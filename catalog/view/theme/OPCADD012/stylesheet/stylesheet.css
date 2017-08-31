@@ -1841,7 +1841,7 @@ background:#fff;
 	line-height:22px;
 	padding:0 15px 0 0;
 }
- .box.category .box-content ul li a{padding:4px 0 0 18px; color:#2a2a2a;}
+ .box.category .box-content ul li a{padding:4px 0 0 18px;}
 .box .box-content ul li a , #content .content ul li a ,.box a.list-group-item ,.account-account #content ul.list-unstyled li a ,
 .affiliate-account #content ul.list-unstyled li a{
 	font:14px/29px "Open Sans",verdana,Helvetica,sans-serif;
@@ -1864,6 +1864,7 @@ background:#fff;
 #menu .main-navigation li:last-child a::before,#menu .main-navigation .drop-downmenu li > a::before {
     background-image: none;
 }
+.box .box-category ul li a{color: #a2a2a2;}
 
 
 .box .box-content ul ul{
