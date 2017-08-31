@@ -286,7 +286,7 @@ class ControllerCheckoutCart extends Controller {
 
 			// checkout form
 			$data['entry_name'] = $this->language->get('entry_name');
-			$data['phone_email'] = $this->language->get('entry_phone');
+			$data['entry_phone'] = $this->language->get('entry_phone');
 			$data['entry_email'] = $this->language->get('entry_email');
 			$data['entry_comment'] = $this->language->get('entry_comment');
 
