@@ -177,8 +177,8 @@ jQuery(window).resize(function() {quickbox();});
             <?php } ?>
          
         
-        <?php /*<li><a href="<?php echo $wishlist; ?>" id="wishlist-total_tm" title="<?php echo $text_wishlist; ?>"><?php echo $text_wishlist; ?></a></li> */ ?>
-        <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><?php echo $text_checkout; ?></a></li>
+        <?php /*<li><a href="<?php echo $wishlist; ?>" id="wishlist-total_tm" title="<?php echo $text_wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
+        <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><?php echo $text_checkout; ?></a></li> */ ?>
       </ul>
     </div>
       
