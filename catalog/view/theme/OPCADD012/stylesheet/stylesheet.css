@@ -1865,7 +1865,7 @@ background:#fff;
     background-image: none;
 }
 .box.box-left-category {
-    background-color: #ff1c1c;
+    background-color: #ff1c1c !important;
 }
 
 
