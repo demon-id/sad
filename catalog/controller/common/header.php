@@ -67,6 +67,7 @@ class ControllerCommonHeader extends Controller {
 		$data['text_manufacturer'] = $this->language->get('text_manufacturer');
 		$data['text_delivery'] = $this->language->get('text_delivery');
 		$data['text_articles'] = $this->language->get('text_articles');
+		die('==='.$data['text_articles']);
 
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_register'] = $this->language->get('text_register');
