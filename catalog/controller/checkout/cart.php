@@ -285,6 +285,8 @@ class ControllerCheckoutCart extends Controller {
 
 
 			// checkout form
+			$data['checkout_action'] = $this->url->link('checkout/cart', '', true);
+
 			$data['entry_name'] = $this->language->get('entry_name');
 			$data['entry_phone'] = $this->language->get('entry_phone');
 			$data['entry_email'] = $this->language->get('entry_email');

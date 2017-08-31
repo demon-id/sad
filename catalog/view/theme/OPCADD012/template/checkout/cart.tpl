@@ -126,7 +126,7 @@
       </div>
 
         <div class="box box-contact-form">
-            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <form action="<?php echo $checkout_action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                 <h2><?php echo $text_checkout; ?></h2>
                 <fieldset>
 
