@@ -248,11 +248,12 @@ jQuery(window).resize(function() {quickbox();});
 			<li ><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
 
   </ul>
+    <div class="header-right">
+        <?php echo $search; ?>
+    </div>
 </div>
 
-<div class="header-right">
-    <?php echo $search; ?>
-</div>
+
 
 
 </div>
