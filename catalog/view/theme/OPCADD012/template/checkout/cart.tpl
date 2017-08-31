@@ -140,6 +140,15 @@
                         </div>
                     </div>
                     <div class="form-group required">
+                        <label class="col-sm-2 control-label" for="input-phone"><?php echo $entry_phone; ?></label>
+                        <div class="col-sm-10">
+                            <input type="text" name="phone" value="<?php echo $phone; ?>" id="input-phone" class="form-control" />
+                            <?php if ($error_phone) { ?>
+                            <div class="text-danger"><?php echo $error_phone; ?></div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
                         <div class="col-sm-10">
                             <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control" />
@@ -148,12 +157,12 @@
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="form-group required">
-                        <label class="col-sm-2 control-label" for="input-enquiry"><?php echo $entry_enquiry; ?></label>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-comment"><?php echo $entry_comment; ?></label>
                         <div class="col-sm-10">
-                            <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control"><?php echo $enquiry; ?></textarea>
-                            <?php if ($error_enquiry) { ?>
-                            <div class="text-danger"><?php echo $error_enquiry; ?></div>
+                            <textarea name="comment" rows="10" id="input-comment" class="form-control"><?php echo $comment; ?></textarea>
+                            <?php if ($error_comment) { ?>
+                            <div class="text-danger"><?php echo $error_comment; ?></div>
                             <?php } ?>
                         </div>
                     </div>
