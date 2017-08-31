@@ -161,9 +161,6 @@
                         <label class="col-sm-2 control-label" for="input-comment"><?php echo $entry_comment; ?></label>
                         <div class="col-sm-10">
                             <textarea name="comment" rows="10" id="input-comment" class="form-control"><?php echo $comment; ?></textarea>
-                            <?php if ($error_comment) { ?>
-                            <div class="text-danger"><?php echo $error_comment; ?></div>
-                            <?php } ?>
                         </div>
                     </div>
                     <?php echo $captcha; ?>
