@@ -13,9 +13,8 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1 class="page-title"><?php echo $heading_title; ?></h1>
-      <h3><?php echo $text_location; ?></h3>
+    <div id="content" class="<?php echo $class; ?>">
+      <?php echo $content_top; ?>
       <div class="col-sm-3">
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
           <h3><?php echo $text_contact; ?></h3>
