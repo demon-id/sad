@@ -8,12 +8,13 @@
                         <li class="level0"><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
                         <li class="level0"><a href="<?php echo $articles; ?>"><?php echo $text_articles; ?></a></li>
                         <li class="level0"><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-                        <li class="level0 text-right">Питомник "Слобода Сад". <?php
+                        <li class="level0 text-right"><span class="pull-right">Питомник "Слобода Сад". <?php
                          echo '2017';
                          if(date('Y')>2016) {
                             echo '-'.date('Y');
                             }
-                        ?></li>
+                         ?>
+                            </span></li>
                     </ul>
                 </div>
         </div>
