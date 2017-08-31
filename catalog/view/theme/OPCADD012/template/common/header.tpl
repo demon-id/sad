@@ -129,18 +129,19 @@ jQuery(window).resize(function() {quickbox();});
     </div>
 
 <nav id="top">
-  <div class="lang-curr-link">
+    <?php /*
+    <div class="lang-curr-link">
   <div class="nav_left">
     <div class="nav_language"> <?php echo $language; ?></div>
 	  <div class="nav_currency">  <?php echo $currency; ?></div>
-	</div>
+  </div>
 	
 	<div class="nav_right">
 	 <!--megnor added -->
 			
 	<div id="top-links" class="nav pull-right">
       <ul class="list-inline">
-		<?php /*<li class="dropdown myaccount"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <i class="fa fa-angle-down"></i></a>
+		<li class="dropdown myaccount"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <i class="fa fa-angle-down"></i></a>
           <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
             <?php if ($logged) { ?>
             <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
@@ -153,18 +154,16 @@ jQuery(window).resize(function() {quickbox();});
             <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
             <?php } ?>
           </ul>
-        </li>*/?>
-        <?php /*<li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>*/ ?>
+        </li>
+        <li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
         <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
       </ul>
     </div>
- <div id="header-links" class="nav pull-right">
-	<div class="headertoggle_img"> <i class="fa fa-user"></i><span class="hidden-xs hidden-sm hidden-md"> <?php echo $text_account; ?></span><i class="fa fa-angle-down"></i></div>
-      <ul class="list-inline header_links">
-<?php /*?> <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
-<?php */?>       
+    <div id="header-links" class="nav pull-right">
 
-         
+     <div class="headertoggle_img"> <i class="fa fa-user"></i><span class="hidden-xs hidden-sm hidden-md"> <?php echo $text_account; ?></span><i class="fa fa-angle-down"></i></div>
+      <ul class="list-inline header_links">
+            <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
             <?php if ($logged) { ?>
             <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
             <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
@@ -178,16 +177,16 @@ jQuery(window).resize(function() {quickbox();});
          
         
         <?php /*<li><a href="<?php echo $wishlist; ?>" id="wishlist-total_tm" title="<?php echo $text_wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
-        <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><?php echo $text_checkout; ?></a></li> */ ?>
+        <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><?php echo $text_checkout; ?></a></li>
       </ul>
     </div>
       
 		</div>
 	</div>
-    
-<div class="header-cart">
-    <?php echo $cart; ?>
-</div>
+    */ ?>
+    <div class="header-cart">
+        <?php echo $cart; ?>
+    </div>
 </nav>
     
 	 </div>
