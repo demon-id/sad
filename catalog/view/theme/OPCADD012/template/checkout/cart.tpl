@@ -127,7 +127,7 @@
 
         <div class="box box-contact-form">
             <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-                <h3><?php echo $text_checkout; ?></h3>
+                <h2><?php echo $text_checkout; ?></h2>
                 <fieldset>
 
                     <div class="form-group required">
