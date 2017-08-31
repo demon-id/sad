@@ -290,6 +290,24 @@ class ControllerCheckoutCart extends Controller {
 			$data['entry_email'] = $this->language->get('entry_email');
 			$data['entry_comment'] = $this->language->get('entry_comment');
 
+			if (isset($this->error['name'])) {
+				$data['error_name'] = $this->error['name'];
+			} else {
+				$data['error_name'] = '';
+			}
+
+			if (isset($this->error['phone'])) {
+				$data['error_phone'] = $this->error['phone'];
+			} else {
+				$data['error_phone'] = '';
+			}
+
+			if (isset($this->error['email'])) {
+				$data['error_email'] = $this->error['email'];
+			} else {
+				$data['error_email'] = '';
+			}
+
 
 
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
