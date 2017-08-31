@@ -1864,8 +1864,8 @@ background:#fff;
 #menu .main-navigation li:last-child a::before,#menu .main-navigation .drop-downmenu li > a::before {
     background-image: none;
 }
-.box.box-left-category {
-    background-color: #ff1c1c !important;
+.box.box-left-side {
+    background-color: #a5dd5c !important;
 }
 
 
