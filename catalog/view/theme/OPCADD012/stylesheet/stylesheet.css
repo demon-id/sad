@@ -1894,6 +1894,10 @@ background:#fff;
     color: #2b7720;
 }
 
+.container {
+    background-color: #fff;
+}
+
 .box.box-contact-form {
     padding: 10px 10px 10px 10px !important;
     background-color: #fff;
