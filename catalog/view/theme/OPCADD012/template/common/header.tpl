@@ -205,7 +205,7 @@ jQuery(window).resize(function() {quickbox();});
 <ul class="cms-menu">
 			<li class="head-links"> <a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
             <li class="level0"><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
-            <li class="level0"><a href="<?php echo $articles; ?>">erterter</a></li>
+            <li class="level0"><a href="<?php echo $articles; ?>"><?php echo $text_articles; ?></a></li>
 			<li class="level0"><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
          </ul>
 

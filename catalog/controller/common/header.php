@@ -196,6 +196,7 @@ class ControllerCommonHeader extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');		
 
+		var_dump($data); DIE();
 		return $this->load->view('common/header', $data);
 		
 	}
