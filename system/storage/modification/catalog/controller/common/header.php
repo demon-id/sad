@@ -1,6 +1,7 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
+		die('*-*-*-');
 			// Analytics
 		$this->load->model('extension/extension');
 
