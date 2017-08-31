@@ -14,4 +14,7 @@ $_['text_account']      = 'Личный Кабинет';
 $_['text_order']        = 'История заказов';
 $_['text_wishlist']     = 'Закладки';
 $_['text_newsletter']   = 'Рассылка';
+$_['text_home']  		= 'Главная';
+$_['text_delivery']  	= 'Оплата и доставка';
+$_['text_articles']		= 'Наши статьи';
 $_['text_powered']      = 'Работает на <a href="http://opencart.com/">OpenCart</a>';
