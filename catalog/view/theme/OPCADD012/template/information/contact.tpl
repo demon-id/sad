@@ -15,7 +15,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>">
       <?php echo $content_top; ?>
-      <div class="box">
+      <div class="box box-contact-form">
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
           <h3><?php echo $text_contact; ?></h3>
           <fieldset>

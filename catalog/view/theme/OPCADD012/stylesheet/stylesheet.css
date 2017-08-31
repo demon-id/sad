@@ -1894,6 +1894,12 @@ background:#fff;
     color: #2b7720;
 }
 
+.box.box-contact-form {
+    padding: 10px;
+    background-color: #fff;
+
+}
+
 /* Product Grid Start */
 .product-grid-list { }
 #content .box-product,
