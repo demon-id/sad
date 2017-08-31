@@ -291,6 +291,11 @@ class ControllerCheckoutCart extends Controller {
 			$data['entry_comment'] = $this->language->get('entry_comment');
 			$data['button_submit'] = $this->language->get('button_submit');
 
+			$data['name'] = (isset($this->request->post['name'])) ? $this->request->post['name'] : '';
+			$data['phone'] = (isset($this->request->post['phone'])) ? $this->request->post['phone'] : '';
+			$data['email'] = (isset($this->request->post['email'])) ? $this->request->post['email'] : '';
+			$data['comment'] = (isset($this->request->post['comment'])) ? $this->request->post['comment'] : '';
+
 			if (isset($this->error['name'])) {
 				$data['error_name'] = $this->error['name'];
 			} else {
