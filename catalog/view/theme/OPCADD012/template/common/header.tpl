@@ -118,7 +118,7 @@ jQuery(window).resize(function() {quickbox();});
     </div>
 
     <div class="header-center">
-        <div class="hidden-xs hidden-sm hidden-md">
+        <div class="header-phones">
             <div>Наши телефоны:</div>
             <?php
             $phones = explode(';', $telephone);

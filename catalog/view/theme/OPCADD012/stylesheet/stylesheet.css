@@ -1889,7 +1889,9 @@ background:#fff;
     padding: 12px 10px 0px 0px;
     color: #47525c;
 }
-
+.header-phones {
+    font-size: 16pt;
+}
 
 /* Product Grid Start */
 .product-grid-list { }
