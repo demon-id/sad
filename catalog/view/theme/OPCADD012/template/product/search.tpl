@@ -142,7 +142,7 @@
 					
 					<div class="product-block_content">
 		<div class="caption">
-		<div class="rating">
+		<?php /*<div class="rating">
 			  <?php for ($i = 1; $i <= 5; $i++) { ?>
 			  <?php if ($product['rating'] < $i) { ?>
 			  <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
@@ -151,6 +151,7 @@
 			  <?php } ?>
 			  <?php } ?>
 			</div>
+        */ ?>
 			
 			
 			
