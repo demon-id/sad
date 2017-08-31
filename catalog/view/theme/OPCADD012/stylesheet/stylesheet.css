@@ -1841,7 +1841,7 @@ background:#fff;
 	line-height:22px;
 	padding:0 15px 0 0;
 }
- .box.category .box-content ul li a{padding:4px 0 0 18px;}
+ .box.category .box-content ul li a{padding:4px 0 0 18px; color:#2a2a2a;}
 .box .box-content ul li a , #content .content ul li a ,.box a.list-group-item ,.account-account #content ul.list-unstyled li a ,
 .affiliate-account #content ul.list-unstyled li a{
 	font:14px/29px "Open Sans",verdana,Helvetica,sans-serif;
