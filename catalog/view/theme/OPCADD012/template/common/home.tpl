@@ -1,4 +1,4 @@
-<div class="row content-holder">
+
   <?php echo $header; ?>
   <div class="container">
     <div class="row"><?php echo $column_left; ?>
@@ -15,4 +15,3 @@
   </div>
 
   <?php echo $footer; ?>
-</div>

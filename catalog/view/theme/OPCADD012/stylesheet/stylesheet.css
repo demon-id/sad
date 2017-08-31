@@ -1890,6 +1890,10 @@ background:#fff;
     color: #47525c;
 }
 
+.box.header-box {
+    background-color: #00aaaa;
+}
+
 
 /* Product Grid Start */
 .product-grid-list { }
