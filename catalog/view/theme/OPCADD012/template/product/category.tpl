@@ -120,25 +120,31 @@
 			
         
               <div class="caption">
-			  <div class="rating">
-			  <?php for ($i = 1; $i <= 5; $i++) { ?>
-			  <?php if ($product['rating'] < $i) { ?>
-			  <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
-			  <?php } else { ?>
-			  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-			  <?php } ?>
-			  <?php } ?>
-			</div>
+			    <?php /*
+                  <div class="rating">
+                      <?php for ($i = 1; $i <= 5; $i++) { ?>
+                      <?php if ($product['rating'] < $i) { ?>
+                      <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
+                      <?php } else { ?>
+                      <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                      <?php } ?>
+                      <?php } ?>
+                    </div>
+              */ ?>
+
 				<h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-				<div class="rating list">
-			  <?php for ($i = 1; $i <= 5; $i++) { ?>
-			  <?php if ($product['rating'] < $i) { ?>
-			  <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
-			  <?php } else { ?>
-			  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-			  <?php } ?>
-			  <?php } ?>
-			</div>
+
+              <?php /*
+              <div class="rating list">
+                  <?php for ($i = 1; $i <= 5; $i++) { ?>
+                  <?php if ($product['rating'] < $i) { ?>
+                  <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
+                  <?php } else { ?>
+                  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                  <?php } ?>
+                  <?php } ?>
+			    </div>
+            */?>
 			     <p class="description"><?php echo $product['description']; ?></p>
 				<?php if ($product['price']) { ?>
                 <p class="price">

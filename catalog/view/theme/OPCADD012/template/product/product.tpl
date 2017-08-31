@@ -81,21 +81,7 @@
           <div class="<?php echo $class; ?>">
           <h1><?php echo $heading_title; ?></h1>
 		  
-		  <?php if($review_status) { ?>
-          <div class="rating">            
-              <?php for ($i = 1; $i <= 5; $i++) { ?>
-              <?php if ($rating < $i) { ?>
-              <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
-              <?php } else { ?>
-              <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
-              <?php } ?>
-              <?php } ?>
-             <a href="" class="review" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a>  
-			 <a href="" class="write_review" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><i class="fa fa-pencil"></i><?php echo $text_write; ?></a>
-			
-			 </div>
-           <?php } ?>
-     <ul class="list-unstyled description">
+        <ul class="list-unstyled description">
             <?php if ($manufacturer) { ?>
             <li class="brand"><label><?php echo $text_manufacturer; ?></label><a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
             <?php } ?>
@@ -332,52 +318,6 @@
               </table>
             </div>
             <?php } ?>
-            <?php if ($review_status) { ?>
-            <div class="tab-pane" id="tab-review">
-             <form class="form-horizontal" id="form-review">
-                <div id="review"></div>
-                <h2><?php echo $text_write; ?></h2>
-                <div class="form-group required">
-                  <div class="col-sm-12">
-                    <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
-                    <input type="text" name="name" value="<?php echo $customer_name; ?>" id="input-name" class="form-control" />
-                  </div>
-                </div>
-                <div class="form-group required">
-                  <div class="col-sm-12">
-                    <label class="control-label" for="input-review"><?php echo $entry_review; ?></label>
-                    <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
-                    <div class="help-block"><?php echo $text_note; ?></div>
-                  </div>
-                </div>
-                <div class="form-group required">
-                  <div class="col-sm-12">
-                    <label class="control-label"><?php echo $entry_rating; ?></label>
-                    &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
-                    <input type="radio" name="rating" value="1" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="2" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="3" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="4" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="5" />
-                    &nbsp;<?php echo $entry_good; ?></div>
-                </div>
-             <?php echo $captcha; ?>
-                <div class="buttons clearfix">
-                  <div class="pull-right">
-                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
-                  </div>
-                </div>
-				   </form>
-				   
-				   </div>
-                
-             
-            </div>
-            <?php } ?>
           </div>
 	
     
@@ -422,16 +362,7 @@
 					
 					<div class="product-block_content">
 		<div class="caption">
-		<div class="rating">
-			  <?php for ($j = 1; $j <= 5; $j++) { ?>
-       		  <?php if ($product['rating'] < $j) { ?>
-			  <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
-			  <?php } else { ?>
-			  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-			  <?php } ?>
-			  <?php } ?>
-			</div>
-			
+
 			
 			
 					 	<h4 class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>

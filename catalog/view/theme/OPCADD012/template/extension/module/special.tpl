@@ -30,7 +30,8 @@
 		</div>
       	
 		<div class="caption">
-		<div class="rating">
+			<?php /*
+			<div class="rating">
 			  <?php for ($i = 1; $i <= 5; $i++) { ?>
 			  <?php if ($product['rating'] < $i) { ?>
 			  <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
@@ -39,6 +40,7 @@
 			  <?php } ?>
 			  <?php } ?>
 			</div>
+		*/ ?>
 		 	<h4 class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
 			<?php if ($product['price']) { ?>
 			<div class="price">

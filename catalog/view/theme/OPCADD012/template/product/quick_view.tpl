@@ -37,18 +37,7 @@
           <h3 class="product-title"><?php echo $heading_title; ?></h3>
 
 		  
-		  <?php if ($review_status) { ?>
-          <div class="rating">            
-              <?php for ($i = 1; $i <= 5; $i++) { ?>
-              <?php if ($rating < $i) { ?>
-              <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
-              <?php } else { ?>
-              <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
-              <?php } ?>
-              <?php } ?> 
-		  </div>
-          <?php } ?> 
-		  
+
           <ul class="list-unstyled description">
             <?php if ($manufacturer) { ?>
             <li><label class="desc"><?php echo $text_manufacturer; ?></label><a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
