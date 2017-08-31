@@ -74,7 +74,7 @@
 			<span class="saleicon sale">Sale</span>         
 			 <?php } ?>	
 			 <div class="button-group list">
-			<div class="quickview"  title="<?php echo $button_quick; ?>" ><a href="<?php echo $product['quick']; ?>"><?php echo $button_quick; ?></a></div> 
+			<?php /*<div class="quickview"  title="<?php echo $button_quick; ?>" ><a href="<?php echo $product['quick']; ?>"><?php echo $button_quick; ?></a></div>*/ ?>
 			</div>
 			</div>
 			
