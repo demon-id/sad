@@ -68,7 +68,6 @@ class ControllerCommonHeader extends Controller {
 		$data['text_manufacturer'] = $this->language->get('text_manufacturer');
 		$data['text_delivery'] = $this->language->get('text_delivery');
 		$data['text_articles'] = $this->language->get('text_articles');
-		die('==='.$data['text_articles']);
 
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_register'] = $this->language->get('text_register');
@@ -196,7 +195,6 @@ class ControllerCommonHeader extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');		
 
-		var_dump($data); DIE();
 		return $this->load->view('common/header', $data);
 		
 	}
