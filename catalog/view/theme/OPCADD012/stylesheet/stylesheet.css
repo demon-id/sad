@@ -2809,7 +2809,7 @@ footer .logo img {
 .product-layout{padding:0 5px!important;}
 .product-list .product-thumb .caption{width:66%; float:left; margin-left:10px; text-align: left;}
 .product-layout .caption h4{font-weight:normal;}
-.product-layout .caption h4 a{color: #ff1c1c}
+.product-layout .caption h4 a{color: #ff1c1c !important;}
 .product-list .caption p{margin:4px 0 14px; }
 .product-list .product-thumb{margin:10px 0 15px; padding: 0 0 25px; overflow:hidden; border-bottom: 1px solid #EEEADE;}
 .product-grid .whishlist{width:100%;}
