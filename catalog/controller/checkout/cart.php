@@ -23,6 +23,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['text_recurring_item'] = $this->language->get('text_recurring_item');
 			$data['text_next'] = $this->language->get('text_next');
 			$data['text_next_choice'] = $this->language->get('text_next_choice');
+			$data['text_checkout'] = $this->language->get('button_checkout');
 
 			$data['column_image'] = $this->language->get('column_image');
 			$data['column_name'] = $this->language->get('column_name');

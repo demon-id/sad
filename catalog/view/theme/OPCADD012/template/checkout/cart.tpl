@@ -123,7 +123,6 @@
       </div>
       <div class="buttons clearfix">
     <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>
-        <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
       </div>
 
         <div class="box box-contact-form">
