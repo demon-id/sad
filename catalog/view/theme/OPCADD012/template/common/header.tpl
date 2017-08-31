@@ -108,8 +108,6 @@ jQuery(window).resize(function() {quickbox();});
     <div class="row header box header-box">
      
 	 <div class="header-left">
-	
-		
         <div id="logo">
           <?php if ($logo) { ?>
           <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
@@ -118,7 +116,17 @@ jQuery(window).resize(function() {quickbox();});
           <?php } ?>
         </div>
     </div>
-	
+
+    <div class="header-center">
+        <div class="hidden-xs hidden-sm hidden-md">
+            <?php
+            $phones = explode(';', $telephone);
+             foreach($phones as $phone) {
+                echo '<div>'.trim($phone).'</div>';
+             }
+            ?>
+        </span>
+    </div>
 
 <nav id="top">
   <div class="lang-curr-link">
@@ -132,7 +140,6 @@ jQuery(window).resize(function() {quickbox();});
 			
 	<div id="top-links" class="nav pull-right">
       <ul class="list-inline">
-		<li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
 		<?php /*<li class="dropdown myaccount"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <i class="fa fa-angle-down"></i></a>
           <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
             <?php if ($logged) { ?>
