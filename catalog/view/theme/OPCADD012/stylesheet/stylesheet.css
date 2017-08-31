@@ -1867,7 +1867,7 @@ background:#fff;
 .box.box-left-side {
     background-color: #ffcebb !important;
 }
-.box.box-left-side ul li a {
+.box.box-left-side ul li a, .box.box-left-side box-content {
     color: #47525c !important;
 }
 .box.box-left-side ul li a:hover {
