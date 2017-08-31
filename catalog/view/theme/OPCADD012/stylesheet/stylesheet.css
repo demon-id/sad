@@ -1885,6 +1885,11 @@ background:#fff;
     font-size: 10pt;
 }
 
+.bottom-copyright {
+    padding: 0px 0px 0px 0px;
+    color: #fff;
+}
+
 
 /* Product Grid Start */
 .product-grid-list { }
