@@ -12,7 +12,7 @@
                     </ul>
                     <div class="bottom-copyright pull-right">Питомник "Слобода Сад". <?php
                          echo '2017';
-                         if(date('Y')>2016) {
+                         if(date('Y')>2017) {
                         echo '-'.date('Y');
                         }
                         ?>
