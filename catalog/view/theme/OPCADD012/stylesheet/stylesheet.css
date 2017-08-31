@@ -1867,7 +1867,9 @@ background:#fff;
 .box.box-left-side {
     background-color: #ffcebb !important;
 }
-
+.box.box-left-side ul li a {
+    color: #47525c !important;
+}
 
 .box .box-content ul ul{
 	margin-left:15px;
