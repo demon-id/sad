@@ -603,9 +603,10 @@ class ControllerCheckoutCart extends Controller {
 		}
 
 
-		return false;
 		// Captcha
 		if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('guest', (array)$this->config->get('config_captcha_page'))) {
+
+			return false;
 			$captcha = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha') . '/validate');
 
 		if ($captcha) {
