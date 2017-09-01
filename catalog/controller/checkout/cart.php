@@ -318,7 +318,6 @@ class ControllerCheckoutCart extends Controller {
 
 			// Captcha
 			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('guest', (array)$this->config->get('config_captcha_page'))) {
-				die('++++');
 				$data['captcha'] = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha'), $this->error);
 			} else {
 				$data['captcha'] = '';
