@@ -200,7 +200,7 @@ class ControllerCheckoutCart extends Controller {
 				$this->model_account_activity->addActivity('order_guest', $activity_data);
 			}
 
-			$this->session->set('success_order_id', $order_id);
+			$this->session->data['success_order_id'] = $order_id;
 
 			$this->response->redirect($this->url->link('checkout/cart'));
 		}
@@ -211,6 +211,8 @@ class ControllerCheckoutCart extends Controller {
 		} else {
 			$data['success'] = null;
 		}
+
+		echo '=========='.$data['success'];
 
 		$data['breadcrumbs'] = array();
 
