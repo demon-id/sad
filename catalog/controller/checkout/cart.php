@@ -316,6 +316,7 @@ class ControllerCheckoutCart extends Controller {
 				$data['error_email'] = '';
 			}
 
+			print_r($this->error);
 			// Captcha
 			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('guest', (array)$this->config->get('config_captcha_page'))) {
 				$data['captcha'] = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha'), $this->error);
