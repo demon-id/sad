@@ -358,7 +358,7 @@ opacity:0;
 /* logo */
 .header .header-left {
     float: left;
-    margin: 60px 0 21px;
+    margin: 60px 0 21px 0px;
     padding: 0;
     width: auto;
 }
@@ -1894,10 +1894,6 @@ background:#fff;
     color: #2b7720;
     float: left;
     padding: 30px 0 0;
-}
-.header-center {
-    overflow: hidden;
-    padding: 0px 0 0 145px;
 }
 
 .container {
