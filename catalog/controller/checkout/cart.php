@@ -508,7 +508,7 @@ class ControllerCheckoutCart extends Controller {
 				$data['captcha'] = '';
 			}
 
-
+				die('*-*-*-*-');
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {
 			$data['heading_title'] = $this->language->get('heading_title');
