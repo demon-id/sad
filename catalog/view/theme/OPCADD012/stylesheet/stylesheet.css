@@ -556,10 +556,10 @@ bottom:6px;}
 	margin-bottom: 10px;
 }
 
-#cart .dropdown-menu a {
+#cart .dropdown-menu .mini-cart-info a {
     color: #322A2A;
 }
-#cart .dropdown-menu a:hover {
+#cart .dropdown-menu .mini-cart-info a:hover {
     text-decoration: underline;
     color: #FE8802;
 }
