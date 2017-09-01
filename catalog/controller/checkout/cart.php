@@ -604,10 +604,10 @@ class ControllerCheckoutCart extends Controller {
 
 
 		// Captcha
-		if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('contact', (array)$this->config->get('config_captcha_page'))) {
-
-			die('*-*-*-');
+		if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('guest', (array)$this->config->get('config_captcha_page'))) {
 			$captcha = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha') . '/validate');
+
+			var_dump($captcha); die();
 
 			if ($captcha) {
 				$this->error['captcha'] = $captcha;
