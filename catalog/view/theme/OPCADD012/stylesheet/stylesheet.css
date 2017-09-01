@@ -2390,6 +2390,9 @@ transition-duration: 500ms;
     min-height: 110px;
     z-index: 99;
 	padding:0;
+    background: #fff !important;
+    border-radius: 0 !important;
+    border-top: 3px solid #336e2e !important;
 }
 .header .header-left {float:left;}
 
