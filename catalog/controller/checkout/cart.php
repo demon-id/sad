@@ -317,7 +317,7 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			// Captcha
-			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('checkout', (array)$this->config->get('config_captcha_page'))) {
+			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('guest', (array)$this->config->get('config_captcha_page'))) {
 				$data['captcha'] = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha'), $this->error);
 			} else {
 				$data['captcha'] = '';
@@ -607,9 +607,7 @@ class ControllerCheckoutCart extends Controller {
 		if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('guest', (array)$this->config->get('config_captcha_page'))) {
 			$captcha = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha') . '/validate');
 
-			var_dump($captcha); die();
-
-			if ($captcha) {
+		if ($captcha) {
 				$this->error['captcha'] = $captcha;
 			}
 		}
