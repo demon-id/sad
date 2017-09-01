@@ -300,7 +300,9 @@ class ControllerCheckoutCart extends Controller {
 
 			if (isset($this->error['name'])) {
 				$data['error_name'] = $this->error['name'];
+				die('----');
 			} else {
+				die('+++++');
 				$data['error_name'] = '';
 			}
 
