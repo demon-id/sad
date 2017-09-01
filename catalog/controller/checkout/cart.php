@@ -261,6 +261,7 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			if(!$data['success']) {
+				echo '+++++++++++++';
 				if (isset($this->session->data['success'])) {
 					$data['success'] = $this->session->data['success'];
 
