@@ -149,52 +149,15 @@
         <h3 class="panel-title"><i class="fa fa-comment-o"></i> <?php echo $text_history; ?></h3>
       </div>
       <div class="panel-body">
-
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab-history" data-toggle="tab"><?php echo $tab_history; ?></a></li>
+          <li><a href="#tab-additional" data-toggle="tab"><?php echo $tab_additional; ?></a></li>
+          <?php foreach ($tabs as $tab) { ?>
+          <li><a href="#tab-<?php echo $tab['code']; ?>" data-toggle="tab"><?php echo $tab['title']; ?></a></li>
+          <?php } ?>
+        </ul>
         <div class="tab-content">
-          <div class="tab-pane active" id="tab-history">
-            <div id="history"></div>
-            <br />
-            <fieldset>
-              <legend><?php echo $text_history_add; ?></legend>
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-order-status"><?php echo $entry_order_status; ?></label>
-                  <div class="col-sm-10">
-                    <select name="order_status_id" id="input-order-status" class="form-control">
-                      <?php foreach ($order_statuses as $order_statuses) { ?>
-                      <?php if ($order_statuses['order_status_id'] == $order_status_id) { ?>
-                      <option value="<?php echo $order_statuses['order_status_id']; ?>" selected="selected"><?php echo $order_statuses['name']; ?></option>
-                      <?php } else { ?>
-                      <option value="<?php echo $order_statuses['order_status_id']; ?>"><?php echo $order_statuses['name']; ?></option>
-                      <?php } ?>
-                      <?php } ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-override"><span data-toggle="tooltip" title="<?php echo $help_override; ?>"><?php echo $entry_override; ?></span></label>
-                  <div class="col-sm-10">
-                    <input type="checkbox" name="override" value="1" id="input-override" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-notify"><?php echo $entry_notify; ?></label>
-                  <div class="col-sm-10">
-                    <input type="checkbox" name="notify" value="1" id="input-notify" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-comment"><?php echo $entry_comment; ?></label>
-                  <div class="col-sm-10">
-                    <textarea name="comment" rows="8" id="input-comment" class="form-control"></textarea>
-                  </div>
-                </div>
-              </form>
-            </fieldset>
-            <div class="text-right">
-              <button id="button-history" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i> <?php echo $button_history_add; ?></button>
-            </div>
-          </div>
+
           <div class="tab-pane" id="tab-additional">
             <?php if ($account_custom_fields) { ?>
             <div class="table-responsive">
