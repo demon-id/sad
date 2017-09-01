@@ -1,7 +1,6 @@
 <?php
 class ControllerExtensionCaptchaBasicCaptcha extends Controller {
 	public function index($error = array()) {
-		die(print_r($error));
 		$this->load->language('extension/captcha/basic_captcha');
 
 		$data['text_captcha'] = $this->language->get('text_captcha');
@@ -13,7 +12,7 @@ class ControllerExtensionCaptchaBasicCaptcha extends Controller {
 		} else {
 			$data['error_captcha'] = '';
 		}
-
+		die('==='.$data['error_captcha']);
 		$data['route'] = $this->request->get['route']; 
 
 		return $this->load->view('extension/captcha/basic_captcha', $data);
