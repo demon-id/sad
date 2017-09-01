@@ -72,7 +72,7 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			$order_data['customer_id'] = 0;
-			$order_data['customer_group_id'] = 0;
+			$order_data['customer_group_id'] = 1;
 			$order_data['firstname'] = $this->request->post['name'];
 			$order_data['lastname'] = $this->request->post['name'];
 			$order_data['email'] = $this->request->post['email'];
@@ -184,7 +184,7 @@ class ControllerCheckoutCart extends Controller {
 			$this->load->model('checkout/order');
 
 			$order_id = $this->model_checkout_order->addOrder($order_data);
-			die('==='.$order_id);
+			$this->model_checkout_order->addOrderHistory($order_id, $this->config->get('config_order_status_id'));
 
 			$this->cart->clear();
 
