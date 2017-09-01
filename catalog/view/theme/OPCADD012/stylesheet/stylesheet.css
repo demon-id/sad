@@ -537,7 +537,7 @@ bottom:6px;}
 	z-index: 1001;
 }
 #cart .dropdown-menu {
-	 background: none repeat scroll 0 0 #FFFFFF;
+	 background: none repeat scroll 0 0 #C8DAB1;
     border: 1px solid #EEEADE;
     border-radius:  5px;
 	-webkit-border-radius: 5px;
@@ -554,6 +554,10 @@ bottom:6px;}
 #cart .dropdown-menu li p{margin:0;}
 #cart .dropdown-menu table {
 	margin-bottom: 10px;
+}
+
+#cart .dropdown-menu a {
+    color: #a2a2a2;
 }
 
 .header-cart{float:right;}
