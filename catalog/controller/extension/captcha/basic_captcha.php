@@ -12,7 +12,7 @@ class ControllerExtensionCaptchaBasicCaptcha extends Controller {
 		} else {
 			$data['error_captcha'] = '';
 		}
-		die('==='.$data['error_captcha']);
+
 		$data['route'] = $this->request->get['route']; 
 
 		return $this->load->view('extension/captcha/basic_captcha', $data);
