@@ -77,55 +77,6 @@
           </table>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><i class="fa fa-cog"></i> <?php echo $text_option; ?></h3>
-          </div>
-          <table class="table">
-            <tbody>
-              <tr>
-                <td><?php echo $text_invoice; ?></td>
-                <td id="invoice" class="text-right"><?php echo $invoice_no; ?></td>
-                <td style="width: 1%;" class="text-center"><?php if (!$invoice_no) { ?>
-                  <button id="button-invoice" data-loading-text="<?php echo $text_loading; ?>" data-toggle="tooltip" title="<?php echo $button_generate; ?>" class="btn btn-success btn-xs"><i class="fa fa-cog"></i></button>
-                  <?php } else { ?>
-                  <button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-refresh"></i></button>
-                  <?php } ?></td>
-              </tr>
-              <tr>
-                <td><?php echo $text_reward; ?></td>
-                <td class="text-right"><?php echo $reward; ?></td>
-                <td class="text-center"><?php if ($customer && $reward) { ?>
-                  <?php if (!$reward_total) { ?>
-                  <button id="button-reward-add" data-loading-text="<?php echo $text_loading; ?>" data-toggle="tooltip" title="<?php echo $button_reward_add; ?>" class="btn btn-success btn-xs"><i class="fa fa-plus-circle"></i></button>
-                  <?php } else { ?>
-                  <button id="button-reward-remove" data-loading-text="<?php echo $text_loading; ?>" data-toggle="tooltip" title="<?php echo $button_reward_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-minus-circle"></i></button>
-                  <?php } ?>
-                  <?php } else { ?>
-                  <button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-plus-circle"></i></button>
-                  <?php } ?></td>
-              </tr>
-              <tr>
-                <td><?php echo $text_affiliate; ?>
-                  <?php if ($affiliate) { ?>
-                  (<a href="<?php echo $affiliate; ?>"><?php echo $affiliate_firstname; ?> <?php echo $affiliate_lastname; ?></a>)
-                  <?php } ?></td>
-                <td class="text-right"><?php echo $commission; ?></td>
-                <td class="text-center"><?php if ($affiliate) { ?>
-                  <?php if (!$commission_total) { ?>
-                  <button id="button-commission-add" data-loading-text="<?php echo $text_loading; ?>" data-toggle="tooltip" title="<?php echo $button_commission_add; ?>" class="btn btn-success btn-xs"><i class="fa fa-plus-circle"></i></button>
-                  <?php } else { ?>
-                  <button id="button-commission-remove" data-loading-text="<?php echo $text_loading; ?>" data-toggle="tooltip" title="<?php echo $button_commission_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-minus-circle"></i></button>
-                  <?php } ?>
-                  <?php } else { ?>
-                  <button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-plus-circle"></i></button>
-                  <?php } ?></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
