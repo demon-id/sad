@@ -3846,7 +3846,7 @@ header{
 	#column-left .box .toggle.active .mobile_togglemenu, #column-right .box .toggle.active .mobile_togglemenu { background-position: right -52px; }
 	.common-home .layout-2.left-col #column-left, .common-home .layout-2.right-col #column-right, .common-home .layout-3 #column-left, .common-home .layout-3 #column-right, #column-left, #column-right { display: none !important; }
 	#column-left .box .box-heading, #column-right .box .box-heading { margin: 0;   position: relative; }
-	#column-left .box .box-content, #column-right .box .box-content, #column-left .box .filterbox, #column-right .box .filterbox  { display: none;  margin-bottom: 0; padding: 10px 0px; }
+	#column-left .box .box-content, #column-right .box .box-content, #column-left .box .filterbox, #column-right .box .filterbox  { margin-bottom: 0; padding: 10px 0px; }
 	#column-left .box .list-group, #column-right .box .list-group { display:none; }
 		.layout-3 #column-left .box,.layout-3 #column-right .box,.layout-2.left-col  #column-left .box,.layout-2.left-col  #column-right .box{
 		  border:1px solid #f4f1e7;
