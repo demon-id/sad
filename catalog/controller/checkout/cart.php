@@ -212,8 +212,6 @@ class ControllerCheckoutCart extends Controller {
 			$data['success'] = null;
 		}
 
-		echo '=========='.$data['success'];
-
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -262,12 +260,14 @@ class ControllerCheckoutCart extends Controller {
 				$data['attention'] = '';
 			}
 
-			if (isset($this->session->data['success'])) {
-				$data['success'] = $this->session->data['success'];
+			if(!isset($data['success'])) {
+				if (isset($this->session->data['success'])) {
+					$data['success'] = $this->session->data['success'];
 
-				unset($this->session->data['success']);
-			} else {
-				$data['success'] = '';
+					unset($this->session->data['success']);
+				} else {
+					$data['success'] = '';
+				}
 			}
 
 			$data['action'] = $this->url->link('checkout/cart/edit', '', true);
