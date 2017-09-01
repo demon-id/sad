@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <div class="container">
-  <ul class="breadcrumb">
+  <ul class="breadcrumb">+++++++++++++++++++++++++++++++++++++++++++++++
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
@@ -30,7 +30,6 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1 class="shopping_cart"><?php echo $heading_title; ?></h1>
-        +++++++++++++++++++++++++++++
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
 		<div class="cart-info">
