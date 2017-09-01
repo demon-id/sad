@@ -612,7 +612,6 @@ class ControllerCheckoutCart extends Controller {
 			if ($captcha) {
 				$this->error['captcha'] = $captcha;
 			}
-			return false;
 		}
 
 		return !$this->error;
