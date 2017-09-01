@@ -317,13 +317,13 @@ $(function () {
 function mobileToggleColumn(){
 if ($(window).width() < 980)
 {
-$('#column-left,#column-right').insertAfter('#content');
+/*$('#column-left,#column-right').insertAfter('#content');
 $("#column-left .box-heading .mobile_togglemenu,#column-right .box-heading .mobile_togglemenu").remove();
 $("#column-left .box-heading,#column-right .box-heading").append( "<a class='mobile_togglemenu'>&nbsp;</a>" );
 $("#column-left .box-heading,#column-right .box-heading").addClass('toggle');
 $("#column-left .box-heading .mobile_togglemenu,#column-right .box-heading .mobile_togglemenu").click(function(){
 	
-$(this).parent().toggleClass('active').parent().find('.box-content,.filterbox,.list-group').slideToggle('slow');
+$(this).parent().toggleClass('active').parent().find('.box-content,.filterbox,.list-group').slideToggle('slow');*/
 });
 }else{
 $('#column-left').insertBefore('#content');
