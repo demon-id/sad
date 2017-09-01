@@ -184,6 +184,7 @@ class ControllerCheckoutCart extends Controller {
 			$this->load->model('checkout/order');
 
 			$order_id = $this->model_checkout_order->addOrder($order_data);
+			die('==='.$order_id);
 
 			$this->cart->clear();
 
