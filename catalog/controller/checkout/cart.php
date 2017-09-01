@@ -602,8 +602,11 @@ class ControllerCheckoutCart extends Controller {
 			$this->error['email'] = $this->language->get('error_email');
 		}
 
+
 		// Captcha
 		if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('contact', (array)$this->config->get('config_captcha_page'))) {
+
+			die('*-*-*-');
 			$captcha = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha') . '/validate');
 
 			if ($captcha) {
