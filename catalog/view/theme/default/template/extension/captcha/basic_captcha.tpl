@@ -1,5 +1,5 @@
 <div class="form-group required">
-  <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
+  <label class="col-sm-2 control-label" for="input-email"><?php echo $error_captcha; ?></label>
   <div class="col-sm-10">
     <input type="text" name="captcha" id="input-captcha" class="form-control" />
     <img src="index.php?route=extension/captcha/basic_captcha/captcha" alt="" />++++++++++
