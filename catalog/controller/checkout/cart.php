@@ -10,6 +10,195 @@ class ControllerCheckoutCart extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+
+			$order_data = array();
+
+			$totals = array();
+			$taxes = $this->cart->getTaxes();
+			$total = 0;
+
+			// Because __call can not keep var references so we put them into an array.
+			$total_data = array(
+				'totals' => &$totals,
+				'taxes'  => &$taxes,
+				'total'  => &$total
+			);
+
+			$this->load->model('extension/extension');
+
+			$sort_order = array();
+
+			$results = $this->model_extension_extension->getExtensions('total');
+
+			foreach ($results as $key => $value) {
+				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
+			}
+
+			array_multisort($sort_order, SORT_ASC, $results);
+
+			foreach ($results as $result) {
+				if ($this->config->get($result['code'] . '_status')) {
+					$this->load->model('extension/total/' . $result['code']);
+
+					// We have to put the totals in an array so that they pass by reference.
+					$this->{'model_extension_total_' . $result['code']}->getTotal($total_data);
+				}
+			}
+
+			$sort_order = array();
+
+			foreach ($totals as $key => $value) {
+				$sort_order[$key] = $value['sort_order'];
+			}
+
+			array_multisort($sort_order, SORT_ASC, $totals);
+
+			$order_data['totals'] = $totals;
+
+			$this->load->language('checkout/checkout');
+
+			$order_data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
+			$order_data['store_id'] = $this->config->get('config_store_id');
+			$order_data['store_name'] = $this->config->get('config_name');
+
+			if ($order_data['store_id']) {
+				$order_data['store_url'] = $this->config->get('config_url');
+			} else {
+				if ($this->request->server['HTTPS']) {
+					$order_data['store_url'] = HTTPS_SERVER;
+				} else {
+					$order_data['store_url'] = HTTP_SERVER;
+				}
+			}
+
+			$order_data['customer_id'] = 0;
+			$order_data['customer_group_id'] = 0;
+			$order_data['firstname'] = $this->request->post['name'];
+			$order_data['lastname'] = $this->request->post['name'];
+			$order_data['email'] = $this->request->post['email'];
+			$order_data['telephone'] = $this->request->post['phone'];
+			$order_data['fax'] = '';
+			$order_data['custom_field'] = '';
+
+			$order_data['payment_firstname'] = '';
+			$order_data['payment_lastname'] = '';
+			$order_data['payment_company'] = '';
+			$order_data['payment_address_1'] = '';
+			$order_data['payment_address_2'] = '';
+			$order_data['payment_city'] = '';
+			$order_data['payment_postcode'] = '';
+			$order_data['payment_zone'] = '';
+			$order_data['payment_zone_id'] = '';
+			$order_data['payment_country'] = '';
+			$order_data['payment_country_id'] = '';
+			$order_data['payment_address_format'] = '';
+			$order_data['payment_custom_field'] = array();
+			$order_data['payment_method'] = '';
+			$order_data['payment_code'] = '';
+
+			$order_data['shipping_firstname'] = '';
+			$order_data['shipping_lastname'] = '';
+			$order_data['shipping_company'] = '';
+			$order_data['shipping_address_1'] = '';
+			$order_data['shipping_address_2'] = '';
+			$order_data['shipping_city'] = '';
+			$order_data['shipping_postcode'] = '';
+			$order_data['shipping_zone'] = '';
+			$order_data['shipping_zone_id'] = '';
+			$order_data['shipping_country'] = '';
+			$order_data['shipping_country_id'] = '';
+			$order_data['shipping_address_format'] = '';
+			$order_data['shipping_custom_field'] = array();
+			$order_data['shipping_method'] = '';
+			$order_data['shipping_code'] = '';
+
+			$order_data['products'] = array();
+
+			foreach ($this->cart->getProducts() as $product) {
+				$option_data = array();
+
+				foreach ($product['option'] as $option) {
+					$option_data[] = array(
+						'product_option_id'       => $option['product_option_id'],
+						'product_option_value_id' => $option['product_option_value_id'],
+						'option_id'               => $option['option_id'],
+						'option_value_id'         => $option['option_value_id'],
+						'name'                    => $option['name'],
+						'value'                   => $option['value'],
+						'type'                    => $option['type']
+					);
+				}
+
+				$order_data['products'][] = array(
+					'product_id' => $product['product_id'],
+					'name'       => $product['name'],
+					'model'      => $product['model'],
+					'option'     => $option_data,
+					'download'   => $product['download'],
+					'quantity'   => $product['quantity'],
+					'subtract'   => $product['subtract'],
+					'price'      => $product['price'],
+					'total'      => $product['total'],
+					'tax'        => $this->tax->getTax($product['price'], $product['tax_class_id']),
+					'reward'     => $product['reward']
+				);
+			}
+
+			// Gift Voucher
+			$order_data['vouchers'] = array();
+
+			$order_data['comment'] = $this->request->post['comment'];
+			$order_data['total'] = $total_data['total'];
+
+			$order_data['affiliate_id'] = 0;
+			$order_data['commission'] = 0;
+			$order_data['marketing_id'] = 0;
+			$order_data['tracking'] = '';
+
+			$order_data['language_id'] = $this->config->get('config_language_id');
+			$order_data['currency_id'] = $this->currency->getId($this->session->data['currency']);
+			$order_data['currency_code'] = $this->session->data['currency'];
+			$order_data['currency_value'] = $this->currency->getValue($this->session->data['currency']);
+			$order_data['ip'] = $this->request->server['REMOTE_ADDR'];
+
+			if (!empty($this->request->server['HTTP_X_FORWARDED_FOR'])) {
+				$order_data['forwarded_ip'] = $this->request->server['HTTP_X_FORWARDED_FOR'];
+			} elseif (!empty($this->request->server['HTTP_CLIENT_IP'])) {
+				$order_data['forwarded_ip'] = $this->request->server['HTTP_CLIENT_IP'];
+			} else {
+				$order_data['forwarded_ip'] = '';
+			}
+
+			if (isset($this->request->server['HTTP_USER_AGENT'])) {
+				$order_data['user_agent'] = $this->request->server['HTTP_USER_AGENT'];
+			} else {
+				$order_data['user_agent'] = '';
+			}
+
+			if (isset($this->request->server['HTTP_ACCEPT_LANGUAGE'])) {
+				$order_data['accept_language'] = $this->request->server['HTTP_ACCEPT_LANGUAGE'];
+			} else {
+				$order_data['accept_language'] = '';
+			}
+
+			$this->load->model('checkout/order');
+
+			$order_id = $this->model_checkout_order->addOrder($order_data);
+
+			$this->cart->clear();
+
+			// Add to activity log
+			if ($this->config->get('config_customer_activity')) {
+				$this->load->model('account/activity');
+
+				$activity_data = array(
+					'name'     => $this->session->data['guest']['firstname'] . ' ' . $this->session->data['guest']['lastname'],
+					'order_id' => $order_id
+				);
+
+				$this->model_account_activity->addActivity('order_guest', $activity_data);
+			}
+
 			$mail = new Mail();
 			$mail->protocol = $this->config->get('config_mail_protocol');
 			$mail->parameter = $this->config->get('config_mail_parameter');
@@ -22,11 +211,20 @@ class ControllerCheckoutCart extends Controller {
 			$mail->setTo($this->config->get('config_email'));
 			$mail->setFrom($this->request->post['email']);
 			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-			$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
-			$mail->setText($this->request->post['enquiry']);
+			$mail->setSubject('В магазине "Слобода Сад" поступил новый заказ №'.$order_id);
+			$mail->setText('В магазине "Слобода Сад" поступил новый заказ №'.$order_id);
 			$mail->send();
 
-			$this->response->redirect($this->url->link('checkout/success'));
+			$this->session->data['success_order_id'] = $order_id;
+
+			$this->response->redirect($this->url->link('checkout/cart'));
+		}
+
+		if(isset($this->session->data['success_order_id'])) {
+			$data['success'] = 'Номер Вашего заказа '.$this->session->data['success_order_id'].'.<br /> В скором времени мы свяжемся с вами.<br /> Спасибо за заказ.';
+			unset($this->session->data['success_order_id']);
+		} else {
+			$data['success'] = null;
 		}
 
 		$data['breadcrumbs'] = array();
