@@ -73,7 +73,7 @@ class ControllerCheckoutCart extends Controller {
 
 			$order_data['customer_id'] = 0;
 			$order_data['customer_group_id'] = 1;
-			$order_data['firstname'] = $this->request->post['name'];
+			$order_data['firstname'] = '';
 			$order_data['lastname'] = $this->request->post['name'];
 			$order_data['email'] = $this->request->post['email'];
 			$order_data['telephone'] = $this->request->post['phone'];
