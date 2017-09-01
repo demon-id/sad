@@ -568,7 +568,7 @@ class ControllerCheckoutCart extends Controller {
 
 		// Validate cart has products and has stock.
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
-			$this->response->redirect($this->url->link('checkout/cart'));
+			$this->error['cart'] = 'В корзине нет товаров.';
 		}
 
 		// Validate minimum quantity requirements.
@@ -584,7 +584,9 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			if ($product['minimum'] > $product_total) {
-				$this->response->redirect($this->url->link('checkout/cart'));
+				//$redirect = $this->url->link('checkout/cart');
+
+				break;
 			}
 		}
 
@@ -592,12 +594,12 @@ class ControllerCheckoutCart extends Controller {
 			$this->error['name'] = $this->language->get('error_name');
 		}
 
-		if (!filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL)) {
-			$this->error['email'] = $this->language->get('error_email');
+		if ((utf8_strlen($this->request->post['phone']) < 10)) {
+			$this->error['phone'] = $this->language->get('error_phone');
 		}
 
-		if ((utf8_strlen($this->request->post['enquiry']) < 10) || (utf8_strlen($this->request->post['enquiry']) > 3000)) {
-			$this->error['enquiry'] = $this->language->get('error_enquiry');
+		if (!filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL)) {
+			$this->error['email'] = $this->language->get('error_email');
 		}
 
 		// Captcha
