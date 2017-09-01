@@ -1,4 +1,3 @@
-<?php die('*-*-*-*-'); ?>
 <fieldset>
   <legend><?php echo $text_captcha; ?></legend>
   <div class="form-group required">
