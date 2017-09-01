@@ -249,12 +249,10 @@ jQuery(window).resize(function() {quickbox();});
     </li>
     <?php } ?>
 
-	<li ><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
-            <li ><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-            <li ><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-			<li ><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-			<li ><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
-
+      <li> <a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
+      <li><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
+      <li><a href="<?php echo $articles; ?>"><?php echo $text_articles; ?></a></li>
+      <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
   </ul>
     <div class="header-right">
         <?php echo $search; ?>
