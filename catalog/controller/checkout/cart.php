@@ -566,7 +566,6 @@ class ControllerCheckoutCart extends Controller {
 
 	protected function validate() {
 
-		return false;
 		// Validate cart has products and has stock.
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 			$this->error['cart'] = 'В корзине нет товаров.';
@@ -604,6 +603,7 @@ class ControllerCheckoutCart extends Controller {
 		}
 
 
+		return false;
 		// Captcha
 		if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('guest', (array)$this->config->get('config_captcha_page'))) {
 			$captcha = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha') . '/validate');
