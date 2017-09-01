@@ -270,8 +270,6 @@ class ControllerCheckoutCart extends Controller {
 				}
 			}
 
-			echo '=============='.$data['success'];
-
 			$data['action'] = $this->url->link('checkout/cart/edit', '', true);
 
 			if ($this->config->get('config_cart_weight')) {
