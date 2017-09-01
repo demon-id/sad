@@ -261,7 +261,6 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			if(!$data['success']) {
-				echo '+++++++++++++';
 				if (isset($this->session->data['success'])) {
 					$data['success'] = $this->session->data['success'];
 
@@ -270,6 +269,8 @@ class ControllerCheckoutCart extends Controller {
 					$data['success'] = '';
 				}
 			}
+
+			echo '=============='.$data['success'];
 
 			$data['action'] = $this->url->link('checkout/cart/edit', '', true);
 
