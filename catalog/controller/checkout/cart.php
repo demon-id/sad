@@ -205,13 +205,6 @@ class ControllerCheckoutCart extends Controller {
 			$this->response->redirect($this->url->link('checkout/cart'));
 		}
 
-		if(isset($this->session->data['success_order_id'])) {
-			$data['success'] = 'Номер Вашего заказа '.$this->session->data['success_order_id'].'.<br /> В скором времени мы свяжемся с вами.<br /> Спасибо за заказ.';
-			unset($this->session->data['success_order_id']);
-		} else {
-			$data['success'] = null;
-		}
-
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -225,6 +218,11 @@ class ControllerCheckoutCart extends Controller {
 		);
 
 		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
+
+			if(isset($this->session->data['success_order_id'])) {
+				unset($this->session->data['success_order_id']);
+			}
+
 			$data['heading_title'] = $this->language->get('heading_title');
 
 			$data['text_recurring_item'] = $this->language->get('text_recurring_item');
@@ -260,14 +258,12 @@ class ControllerCheckoutCart extends Controller {
 				$data['attention'] = '';
 			}
 
-			if(!$data['success']) {
-				if (isset($this->session->data['success'])) {
-					$data['success'] = $this->session->data['success'];
+			if (isset($this->session->data['success'])) {
+				$data['success'] = $this->session->data['success'];
 
-					unset($this->session->data['success']);
-				} else {
-					$data['success'] = '';
-				}
+				unset($this->session->data['success']);
+			} else {
+				$data['success'] = '';
 			}
 
 			$data['action'] = $this->url->link('checkout/cart/edit', '', true);
@@ -508,12 +504,16 @@ class ControllerCheckoutCart extends Controller {
 				$data['captcha'] = '';
 			}
 
-				die('*-*-*-*-');
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {
 			$data['heading_title'] = $this->language->get('heading_title');
 
 			$data['text_error'] = $this->language->get('text_empty');
+
+			if(isset($this->session->data['success_order_id'])) {
+				$data['text_error'] = 'Номер Вашего заказа '.$this->session->data['success_order_id'].'.<br /> В скором времени мы свяжемся с вами.<br /> Спасибо за заказ.';
+				unset($this->session->data['success_order_id']);
+			}
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
