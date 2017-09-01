@@ -260,7 +260,7 @@ class ControllerCheckoutCart extends Controller {
 				$data['attention'] = '';
 			}
 
-			if(!isset($data['success'])) {
+			if(!$data['success']) {
 				if (isset($this->session->data['success'])) {
 					$data['success'] = $this->session->data['success'];
 
