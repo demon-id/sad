@@ -5,6 +5,10 @@ class ControllerCheckoutCart extends Controller {
 
 	public function index() {
 
+		$this->load->language('checkout/cart');
+
+		$this->document->setTitle($this->language->get('heading_title'));
+
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			$mail = new Mail();
 			$mail->protocol = $this->config->get('config_mail_protocol');
@@ -24,10 +28,6 @@ class ControllerCheckoutCart extends Controller {
 
 			$this->response->redirect($this->url->link('checkout/success'));
 		}
-
-		$this->load->language('checkout/cart');
-
-		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['breadcrumbs'] = array();
 
@@ -589,8 +589,6 @@ class ControllerCheckoutCart extends Controller {
 				break;
 			}
 		}
-
-		die(var_dump($this->language));
 
 		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 32)) {
 			$this->error['name'] = $this->language->get('error_name');
